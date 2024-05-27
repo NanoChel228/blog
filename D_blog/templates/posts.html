@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block dildo %}
+Главная Страница
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for post in all_posts %}
+    <div class="col">
+      <div class="card">
+        <img src="{{post.image.url}}" style="height: 200px; object-fit: cover;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.created_ta|date:'d-F-Y'}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
